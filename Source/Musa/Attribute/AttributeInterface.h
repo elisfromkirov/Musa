@@ -6,8 +6,8 @@ enum class EAttributeTag
 {
 	None,
 	Health,
-	Armour,
-	Mana
+	Mana,
+	Armor
 };
 
 class FAttributeInterface

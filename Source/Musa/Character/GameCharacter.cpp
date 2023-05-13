@@ -6,3 +6,13 @@ AGameCharacter::AGameCharacter()
 
 	Effects = CreateDefaultSubobject<UEffectsComponent>(TEXT("Effects"));
 }
+
+UAttributesComponent* AGameCharacter::GetAttributes()
+{
+	return Attributes;
+}
+
+UEffectsComponent* AGameCharacter::GetEffects()
+{
+	return Effects;
+}

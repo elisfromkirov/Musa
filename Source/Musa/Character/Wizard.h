@@ -24,6 +24,16 @@ public:
 	AWizard();
 
 protected:
+	UFUNCTION(BlueprintCallable)
+	void SetupArmour(int Value, int MaxValue);
+
+	UFUNCTION(BlueprintCallable)
+	void SetupHealth(int Value, int MaxValue);
+
+	UFUNCTION(BlueprintCallable)
+	void SetupMana(int Value, int MaxValue);
+
+protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	USpringArmComponent* CameraBoom;
 

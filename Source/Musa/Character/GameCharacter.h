@@ -16,6 +16,10 @@ class MUSA_API AGameCharacter : public ACharacter
 public:
 	AGameCharacter();
 
+	UAttributesComponent* GetAttributes();
+
+	UEffectsComponent* GetEffects();
+
 protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	UAttributesComponent* Attributes;

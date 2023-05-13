@@ -57,7 +57,7 @@ TAttribute* UAttributesComponent::Get()
 	auto Index = Find<TAttribute>();
 	if (Index != Attributes.Num())
 	{
-		return Attributes[Index];
+		return static_cast<TAttribute*>(Attributes[Index]);
 	}
 	return nullptr;
 }
@@ -66,7 +66,7 @@ template <typename TAttribute>
 void UAttributesComponent::Add()
 {
 	auto Index = Find<TAttribute>();
-	if (Index != Attributes.Num())
+	if (Index == Attributes.Num())
 	{
 		Attributes.Add(new TAttribute());
 	}

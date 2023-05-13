@@ -21,7 +21,7 @@ int FHealth::GetValue() const
 
 void FHealth::SetValue(int NewValue)
 {
-	if (NewValue < MaxValue)
+	if (NewValue <= MaxValue)
 	{
 		Value = NewValue;
 	}
@@ -29,7 +29,6 @@ void FHealth::SetValue(int NewValue)
 	{
 		Value = MaxValue;
 	}
-
 }
 
 int FHealth::GetMaxValue() const
@@ -39,5 +38,10 @@ int FHealth::GetMaxValue() const
 
 void FHealth::SetMaxValue(int NewMaxValue)
 {
+	if (Value > NewMaxValue)
+	{
+		Value = NewMaxValue;
+	}
+
 	MaxValue = NewMaxValue;
 }

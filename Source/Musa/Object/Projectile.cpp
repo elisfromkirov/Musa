@@ -8,7 +8,7 @@ AProjectile::AProjectile()
 
 void AProjectile::OnHitGameCharacter(AGameCharacter* GameCharacter)
 {
-	UE_LOG(LogTemp, Display, TEXT("Hit game character"));
+	UE_LOG(LogTemp, Display, TEXT("On game character hitting"));
 
 	// TODO: (elisfromkirov) damage hitted character
 
@@ -17,14 +17,14 @@ void AProjectile::OnHitGameCharacter(AGameCharacter* GameCharacter)
 
 void AProjectile::OnHitGameObject(AGameObject* GameObject)
 {
-	UE_LOG(LogTemp, Display, TEXT("Hit game actor"));
+	UE_LOG(LogTemp, Display, TEXT("On game object hitting"));
 
 	Destroy();
 }
 
 void AProjectile::OnHit()
 {
-	UE_LOG(LogTemp, Display, TEXT("Hit arbitrary actor class"));
+	UE_LOG(LogTemp, Display, TEXT("On arbitrary actor hitting"));
 
 	Destroy();
 }

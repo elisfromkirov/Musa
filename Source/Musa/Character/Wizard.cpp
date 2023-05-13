@@ -2,6 +2,10 @@
 
 #include "Components/InputComponent.h"
 
+#include "../Attribute/Armor.h"
+#include "../Attribute/Health.h"
+#include "../Attribute/Mana.h"
+
 AWizard::AWizard()
 {
 	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom"));
@@ -15,6 +19,31 @@ AWizard::AWizard()
 
 	SpellBook = CreateDefaultSubobject<USpellBookComponent>(TEXT("SpellBook"));
 	SpellBook->SetWeapon(Weapon);
+
+	Attributes->Add<FArmor>();
+	Attributes->Add<FHealth>();
+	Attributes->Add<FMana>();
+}
+
+void AWizard::SetupArmour(int Value, int MaxValue)
+{
+	auto Armor = Attributes->Get<FArmor>();
+	Armor->SetMaxValue(MaxValue);
+	Armor->SetValue(Value);
+}
+
+void AWizard::SetupHealth(int Value, int MaxValue)
+{
+	auto Health = Attributes->Get<FHealth>();
+	Health->SetMaxValue(MaxValue);
+	Health->SetValue(Value);
+}
+
+void AWizard::SetupMana(int Value, int MaxValue)
+{
+	auto Mana = Attributes->Get<FMana>();
+	Mana->SetMaxValue(MaxValue);
+	Mana->SetValue(Value);
 }
 
 void AWizard::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)

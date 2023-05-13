@@ -12,7 +12,7 @@ class MUSA_API AManaPotion : public AGameObject
 	GENERATED_BODY()
 
 protected:
-	void OnHitGameCharacter(AGameCharacter* GameCharacter) override;s
+	void OnHitGameCharacter(AGameCharacter* GameCharacter) override;
 
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
