@@ -1,9 +1,5 @@
 #include "AttributesComponent.h"
 
-UAttributesComponent::UAttributesComponent()
-{
-}
-
-UAttributesComponent::~UAttributesComponent()
+void UAttributesComponent::OnTick(float DeltaTime, AGameCharacter* GameCharacter)
 {
 }

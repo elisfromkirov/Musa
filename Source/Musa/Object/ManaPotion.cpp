@@ -13,5 +13,6 @@ void AManaPotion::OnHitGameCharacter(AGameCharacter* GameCharacter)
 	{
 		auto Mana = Attributes->Get<FMana>();
 		Mana->SetValue(Mana->GetValue() + Value);
+		Destroy();
 	}
 }

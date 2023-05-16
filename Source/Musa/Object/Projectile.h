@@ -18,6 +18,10 @@ class MUSA_API AProjectile : public AGameObject
 public:
 	AProjectile();
 
+	int GetCost() const;
+
+	int GetDamage() const;
+
 protected:
 	void OnHitGameCharacter(AGameCharacter* GameCharacter) override;
 
@@ -29,6 +33,9 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	UProjectileMovementComponent* Movement;	
 	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int Cost;
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int Damage;
 };

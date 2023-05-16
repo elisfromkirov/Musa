@@ -7,16 +7,14 @@
 
 #include "AttributesComponent.generated.h"
 
+class AGameCharacter;
+
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class MUSA_API UAttributesComponent final : public UActorComponent
 {
 	GENERATED_BODY()
 
 public:
-	UAttributesComponent();
-
-	~UAttributesComponent() override;
-
 	template <typename TAttribute>
 	bool Has();
 
@@ -28,6 +26,8 @@ public:
 
 	template <typename TAttribute>
 	void Remove();
+
+	void OnTick(float DeltaTime, AGameCharacter* GameCharacter);
 
 private:
 	typedef TArray<FAttributeInterface>::SizeType SizeType;

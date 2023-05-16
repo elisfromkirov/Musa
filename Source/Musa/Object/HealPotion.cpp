@@ -13,5 +13,6 @@ void AHealPotion::OnHitGameCharacter(AGameCharacter* GameCharacter)
 	{
 		auto Health = Attributes->Get<FHealth>();
 		Health->SetValue(Health->GetValue() + Value);
+		Destroy();
 	}
 }
